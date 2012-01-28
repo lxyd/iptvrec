@@ -111,13 +111,13 @@
             return get_nearest_run(t1) - get_nearest_run(t2);
     }
     function render_task(tr, task) {
-        var symbol = '';
+        var symbol = '✓';
         tr.attr('id', 'task_' + task.id);
         tr.data('id', task.id);
 
         if(task.id in running_task_list) {
             tr.addClass('running');
-            symbol = '‣';
+            symbol = '▷'; //'▶‣';
         } else if(!task.enabled) {
             tr.addClass('disabled');
             symbol = '✗';
@@ -243,6 +243,7 @@
         if(id in running_task_list) {
             $(':input', e).attr('disabled', true);
             $('INPUT[name=end]', e).attr('disabled', false);
+            $('INPUT[name=enabled]', e).attr('disabled', false);
         } else {
             $('INPUT[name=date]', e).datepicker();
         }
@@ -339,6 +340,18 @@
     $.datepicker.setDefaults($.datepicker.regional['ru']);
     $(function() {
         reload_data();
+
+        $(document).on('keyup', 'INPUT[type=time]', function(ev) {
+            var val = $(this).val();
+            if(ev.keyCode != 8) {
+                if(val.length == 2) {
+                    if(-1 == ": .,;".indexOf(val.charAt(1))) {
+                        val += ":";
+                        $(this).val(val);
+                    }
+                }
+            }
+        });
 
         setInterval(function(){
             if($('#tasks .edit').length == 0) {

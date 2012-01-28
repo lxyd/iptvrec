@@ -1,3 +1,8 @@
+BODY {
+    font-family: Arial, Sans-Serif;
+    font-size: 12pt;
+}
+
 TABLE#tasks { width: 100%; }
 TABLE#tasks TD, TH {
     border: 1px solid #E3E3E3;
@@ -51,8 +56,8 @@ TABLE#tasks TR.disabled TD { background: #EEE; color: #AAA; }
 
 TABLE#tasks A.ctrl-btn {
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     padding: 0;
     margin: 5px;
 }
