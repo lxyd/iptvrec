@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP TV Recorder</title>
+    <link rel="stylesheet" href="/css/iptvrec.css"/>
+    <link rel="stylesheet" href="/css/smoothness/jquery-ui-1.8.17.custom.css"/>
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/js/jquery.json-2.3.min.js"></script>
+    <script src="/js/hotmilk.browser.jquery.js"></script>
+    <script src="/js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="/js/jquery.ui.datepicker-ru.js"></script>
+    <script src="/js/iptvrec.js"></script>
+    <script type="text/x-mustache-template" data-hotmilk-path="chanlist/item">
+        <option value='{{url}}'>{{name}}</option>
+    </script>
+    <script type="text/x-mustache-template" data-hotmilk-path="item/display">
+        <td class="controls">
+            <a href="javascript:void(0);" class="ctrl-btn btn-edit-item" title="Править"></a>
+        </td>
+        <td data-field="enabled">
+        </td>
+        <td data-field="date">
+        </td>
+        <td data-field="channel">
+        </td>
+        <td data-field="name">
+        </td>
+        <td data-field="start">
+        </td>
+        <td data-field="end">
+        </td>
+        <td class="controls">
+            <a href="javascript:void(0);" class="ctrl-btn btn-delete-item" title="Удалить"></a>
+        </td>
+    </script>
+    <script type="text/x-mustache-template" data-hotmilk-path="item/edit">
+        <td class="controls">
+            <a href="javascript:void(0);" class="ctrl-btn btn-revert-item" title="Отмена"></a>
+        </td>
+        <td data-field="enabled">
+            <input type="checkbox" name="enabled" title="Если галочка снята, задача не будет выполняться"/>
+        </td>
+        <td data-field="date">
+            <div>
+                <input type="radio" name="date-type" value="date" checked="checked"/>
+                <input type="date" name="date"/>
+            </div>
+            <div>
+                <input type="radio" name="date-type" value="days"/>
+                <label><input type="checkbox" name="days" value="1"/>пн</label>
+                <label><input type="checkbox" name="days" value="2"/>вт</label>
+                <label><input type="checkbox" name="days" value="3"/>ср</label>
+                <label><input type="checkbox" name="days" value="4"/>чт</label>
+                <label><input type="checkbox" name="days" value="5"/>пт</label>
+                <label><input type="checkbox" name="days" value="6"/>сб</label>
+                <label><input type="checkbox" name="days" value="7"/>вс</label>
+            </div>
+        </td>
+        <td data-field="channel">
+            <select name="channel">
+            </select>
+        </td>
+        <td data-field="name">
+            <input name="name"/>
+        </td>
+        <td data-field="start">
+            <input type="time" name="start"/>
+        </td>
+        <td data-field="end">
+            <input type="time" name="end"/>
+        </td>
+        <td class="controls">
+            <a href="javascript:void(0);" class="ctrl-btn btn-save-item" title="Ок"></a>
+        </td>
+    </script>
+</head>
+
+<body>
+    <table id="tasks">
+        <thead>
+            <tr>
+                <th width="50px">
+                    <a href="javascript:void(0);" class="ctrl-btn btn-add-item" title="Создать"></a>
+                </th>
+                <th width="30px" title="Статус">✓</th>
+                <th width="200px">Дата</th>
+                <th width="300px">Канал</th>
+                <th>Название</th>
+                <th width="80px">Начало</th>
+                <th width="80px">Конец</th>
+                <th width="50px"></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+</html> 

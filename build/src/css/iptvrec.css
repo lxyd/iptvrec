@@ -1,0 +1,63 @@
+TABLE#tasks { width: 100%; }
+TABLE#tasks TD, TH {
+    border: 1px solid #E3E3E3;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+TABLE#tasks TH {
+    background: #EEE;
+}
+TABLE#tasks LABEL { white-space: nowrap; }
+
+TABLE#tasks TD.controls {
+    text-align: center;
+}
+
+TABLE#tasks TD[data-field=enabled],
+TABLE#tasks TD[data-field=date],
+TABLE#tasks TD[data-field=channel],
+TABLE#tasks TD[data-field=name],
+TABLE#tasks TD[data-field=start],
+TABLE#tasks TD[data-field=end] {
+    text-align: center;
+}
+
+TABLE#tasks TR.edit TD[data-field=date],
+TABLE#tasks TR.edit TD[data-field=channel],
+TABLE#tasks TR.edit TD[data-field=name],
+TABLE#tasks TR.edit TD[data-field=start],
+TABLE#tasks TR.edit TD[data-field=end] {
+    text-align: left;
+}
+TABLE#tasks TR.edit TD[data-field=enabled] { text-align: center; }
+TABLE#tasks TR.edit TD[data-field=date] DIV { padding-left: 25px; }
+TABLE#tasks TR.edit TD[data-field=date] INPUT[type=radio] { float: left; margin-left: -20px; }
+
+TABLE#tasks INPUT[name=date],
+TABLE#tasks SELECT[name=channel],
+TABLE#tasks INPUT[name=name],
+TABLE#tasks INPUT[name=start],
+TABLE#tasks INPUT[name=end] {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+TABLE#tasks TR.running TD { background: #BFB; }
+TABLE#tasks TR.disabled TD { background: #EEE; color: #AAA; }
+
+
+TABLE#tasks A.ctrl-btn {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 5px;
+}
+TABLE#tasks A.btn-add-item { background: url(/img/add.png); }
+TABLE#tasks A.btn-delete-item { background: url(/img/delete.png); }
+TABLE#tasks A.btn-save-item { background: url(/img/ok.png); }
+TABLE#tasks A.btn-revert-item { background: url(/img/cancel.png); }
+TABLE#tasks A.btn-edit-item { background: url(/img/edit.png); }

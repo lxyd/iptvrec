@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "port": 1234,
+    "log": false,
+    "video_dir": "/tmp/",
+    "channels_m3u": null
+}
+

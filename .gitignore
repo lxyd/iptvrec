@@ -1,0 +1,8 @@
+*/bin/**/*
+*/bin/*
+*/gen/**/*
+*/gen/*
+*/build/**/*
+*/build/*
+*.swp
+*~
