@@ -210,8 +210,10 @@ class RecDaemon(Daemon):
                         os.kill(running_tasks[t['id']], signal.SIGTERM)
                         running_tasks.pop(t['id'])
 
-                if not is_task_obsolete(t, now):
-                    tasks_to_save.add(t['id'])
+                #if not is_task_obsolete(t, now):
+                #    tasks_to_save.add(t['id'])
+                if is_task_obsolete(t, now):
+                    t['enabled'] = False
 
             # now clear tasks that are running for some reason but are not in list at all
             for tid in list(running_tasks.keys()):
@@ -225,7 +227,7 @@ class RecDaemon(Daemon):
 
             # if there are obsolete tasks, remove them and save data
             if [ t for t in common.data['tasks'] if is_task_obsolete(t, now) ]:
-                common.data['tasks'] = [ t for t in common.data['tasks'] if not is_task_obsolete(t, now) ]
+                #common.data['tasks'] = [ t for t in common.data['tasks'] if not is_task_obsolete(t, now) ]
                 store_json(data_path, common.data)
         finally:
             lock.release()
