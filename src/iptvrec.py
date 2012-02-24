@@ -210,9 +210,9 @@ class RecDaemon(Daemon):
                         os.kill(running_tasks[t['id']], signal.SIGTERM)
                         running_tasks.pop(t['id'])
 
-                #if not is_task_obsolete(t, now):
-                #    tasks_to_save.add(t['id'])
-                if is_task_obsolete(t, now):
+                if not is_task_obsolete(t, now):
+                    tasks_to_save.add(t['id'])
+                else:
                     t['enabled'] = False
 
             # now clear tasks that are running for some reason but are not in list at all
